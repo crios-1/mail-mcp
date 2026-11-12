@@ -1,0 +1,26 @@
+{
+  "name": "outlook-browser-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that drives Outlook on the web (Office 365) through a headless Playwright browser: list, read, delete mail and create drafts.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "outlook-browser-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "login": "node dist/login.js",
+    "start": "node dist/index.js",
+    "inspect": "npx @modelcontextprotocol/inspector node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "p-queue": "^8.1.1",
+    "playwright": "^1.52.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.0"
+  }
+}

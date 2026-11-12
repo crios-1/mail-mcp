@@ -1,0 +1,4 @@
+node_modules/
+dist/
+# Browser profile with your Office 365 session cookies - never commit
+.browser-profile/
