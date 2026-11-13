@@ -21,7 +21,7 @@ for (let attempt = 1; ; attempt++) {
 console.log(`Sign in in the browser window. Profile: ${PROFILE_DIR}`);
 console.log("Waiting until the inbox is visible (max 5 min)...");
 
-await page.waitForURL(/outlook\.(office|office365|live)\.com\/mail/, { timeout: 300_000 });
+await page.waitForURL(/outlook\.(office|office365|live)\.com\/mail|outlook\.cloud\.microsoft\/mail/, { timeout: 300_000 });
 await page.getByRole("listbox").first().waitFor({ timeout: 300_000 });
 console.log("Logged in. Session saved. You can close this now.");
 await ctx.close();

@@ -1,0 +1,15 @@
+# systemd *user* service. Install with: npm run service:install
+[Unit]
+Description=Outlook browser MCP server (HTTP, behind Tailscale)
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Workspace/mail-mcp
+EnvironmentFile=%h/.config/outlook-mcp.env
+ExecStart=/usr/bin/env node dist/index.js --http
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
